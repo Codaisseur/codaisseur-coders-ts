@@ -1,9 +1,9 @@
 import axios from "axios";
 import { Dispatch } from "redux";
 import { ReduxState } from "..";
-import { FeedAction, Post } from "./types";
-
-const API_URL = `https://codaisseur-coders-network.herokuapp.com`;
+import { FeedAction } from "./types";
+import { Post } from "../types";
+import { API_URL } from "../config";
 
 export const startLoading = (): FeedAction => ({
   type: "feed/startLoading",

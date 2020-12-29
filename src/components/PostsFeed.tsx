@@ -1,6 +1,7 @@
 // src/components/PostsFeed.tsx
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import moment from "moment";
 
 import "./PostsFeed.css";
@@ -24,7 +25,9 @@ export default function PostsFeed() {
       {posts.map(post => {
         return (
           <div key={post.id}>
-            <h3>{post.title}</h3>
+            <h3>
+              <Link to={`/post/${post.id}`}>{post.title}</Link>
+            </h3>
             <p className="meta">
               {moment(post.createdAt).format("DD-MM-YYYY")} &bull;{" "}
               {/* {post.post_likes.length} likes &bull;{" "} */}
