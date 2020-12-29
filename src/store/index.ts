@@ -1,11 +1,10 @@
 // src/store/index.ts
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import ReduxThunk from "redux-thunk";
-// import someFeatureReducer from "./someFeature/reducer";
+import feedSliceReducer from "./feed/reducer";
 
 const rootReducer = combineReducers({
-  // someFeature: someFeatureReducer
-  // etc...
+  feed: feedSliceReducer,
 });
 
 const devTools = (window as any).__REDUX_DEVTOOLS_EXTENSION__
